@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:tourist_guide_app/home/home_page.dart';
+import 'package:tourist_guide_app/login/login_page.dart';
 import 'package:tourist_guide_app/sign_up/sign_up_page.dart';
 
 void main(){
@@ -13,7 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Tourist Guide',
-      home: SignUpPage(),
+      initialRoute: SignUpPage.routeName,
+      routes: {
+        SignUpPage.routeName: (context) => SignUpPage(),
+        LoginPage.routeName: (context) =>LoginPage(),
+        HomePage.routeName: (context) => HomePage(),
+
+      },
     );
   }
 }
