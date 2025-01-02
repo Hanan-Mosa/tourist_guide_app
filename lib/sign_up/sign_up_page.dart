@@ -4,7 +4,7 @@ import 'package:tourist_guide_app/widgets/elevated_button_widget.dart';
 import 'package:tourist_guide_app/widgets/text_form_field_widget.dart';
 
 class SignUpPage extends StatefulWidget {
-
+  static const String routeName = '/';
   SignUpPage({super.key});
 
   @override
@@ -72,8 +72,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ElevatedButtonWidget(
                       text: 'Sign up', clickButton: (){
                         if (_formKey.currentState!.validate()) {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => LoginPage()));
+                        Navigator.pushNamed(context, LoginPage.routeName,arguments:[emailController.text,nameController.text] );
                       }}),
 
 
